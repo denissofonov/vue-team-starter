@@ -1,0 +1,11 @@
+node_modules
+.nuxt
+.output
+dist
+.turbo
+*.log
+.DS_Store
+.idea
+.vscode
+coverage
+playwright-report
