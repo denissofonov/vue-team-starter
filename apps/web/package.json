@@ -1,0 +1,32 @@
+{
+  "name": "@vue-team-starter/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
+    "@vue-team-starter/composables": "workspace:*",
+    "@vue-team-starter/tokens": "workspace:*",
+    "@vue-team-starter/ui": "workspace:*",
+    "lucide-vue-next": "^0.577.0",
+    "nuxt": "^3.15.0",
+    "reka-ui": "^2.9.2",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@vue-team-starter/eslint-config": "workspace:*",
+    "eslint": "^9.18.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}
