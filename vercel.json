@@ -1,0 +1,5 @@
+{
+  "buildCommand": "turbo build --filter=@vue-team-starter/web",
+  "outputDirectory": "apps/web/.output/public",
+  "installCommand": "pnpm install"
+}
