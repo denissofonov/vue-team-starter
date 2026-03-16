@@ -5,9 +5,9 @@ export default function createConfig(options = {}) {
     vue: true,
     typescript: true,
     formatters: false,
-    stylistic: {
-      semi: false,
-      quotes: 'single',
+    stylistic: false,
+    rules: {
+      'antfu/if-newline': 'off',
     },
     ...options,
   })
