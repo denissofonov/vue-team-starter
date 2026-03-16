@@ -22,6 +22,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @vue-team-starter/web exec nuxt prepare
       - run: pnpm lint
       - run: pnpm format:check
 
@@ -36,6 +37,7 @@ jobs:
           node-version: 20
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      - run: pnpm --filter @vue-team-starter/web exec nuxt prepare
       - run: pnpm typecheck
 
   test:
