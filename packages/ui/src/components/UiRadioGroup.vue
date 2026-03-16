@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RadioGroupRoot, RadioGroupItem, RadioGroupIndicator } from 'reka-ui'
+import { RadioGroupIndicator, RadioGroupItem, RadioGroupRoot } from 'reka-ui'
 
 interface RadioOption {
   value: string
@@ -30,14 +30,11 @@ defineEmits<{
     :model-value="modelValue"
     :disabled="disabled"
     :orientation="orientation"
-    :class="['ui-radio-group', `ui-radio-group--${orientation}`]"
+    class="ui-radio-group"
+    :class="[`ui-radio-group--${orientation}`]"
     @update:model-value="$emit('update:modelValue', String($event))"
   >
-    <label
-      v-for="option in options"
-      :key="option.value"
-      class="ui-radio-group__item"
-    >
+    <label v-for="option in options" :key="option.value" class="ui-radio-group__item">
       <RadioGroupItem
         :value="option.value"
         :disabled="option.disabled"

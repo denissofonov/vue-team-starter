@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import {
-  DialogRoot,
-  DialogPortal,
-  DialogOverlay,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
   DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogOverlay,
+  DialogPortal,
+  DialogRoot,
+  DialogTitle,
 } from 'reka-ui'
 
 interface Props {
@@ -28,10 +28,10 @@ defineEmits<{
       <DialogOverlay class="ui-modal__overlay" />
       <DialogContent class="ui-modal">
         <div class="ui-modal__header">
-          <DialogTitle class="ui-modal__title">{{ title }}</DialogTitle>
-          <DialogClose class="ui-modal__close" aria-label="Close dialog">
-            &times;
-          </DialogClose>
+          <DialogTitle class="ui-modal__title">
+            {{ title }}
+          </DialogTitle>
+          <DialogClose class="ui-modal__close" aria-label="Close dialog"> &times; </DialogClose>
         </div>
         <DialogDescription v-if="description" class="ui-modal__description">
           {{ description }}
@@ -127,12 +127,22 @@ defineEmits<{
 }
 
 @keyframes overlay-show {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes content-show {
-  from { opacity: 0; transform: translate(-50%, -50%) scale(0.96); }
-  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 </style>

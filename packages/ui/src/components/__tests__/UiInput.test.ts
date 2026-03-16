@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
 import UiInput from '../UiInput.vue'
 
-describe('UiInput', () => {
+describe('uiInput', () => {
   it('renders label when provided', () => {
     const wrapper = mount(UiInput, {
       props: { label: 'Email' },

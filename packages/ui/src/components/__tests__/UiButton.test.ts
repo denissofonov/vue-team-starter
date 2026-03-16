@@ -1,8 +1,8 @@
-import { describe, expect, it } from 'vitest'
 import { mount } from '@vue/test-utils'
+import { describe, expect, it } from 'vitest'
 import UiButton from '../UiButton.vue'
 
-describe('UiButton', () => {
+describe('uiButton', () => {
   it('renders slot content', () => {
     const wrapper = mount(UiButton, {
       slots: { default: 'Click me' },

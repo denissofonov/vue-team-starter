@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import {
-  AccordionRoot,
-  AccordionItem,
-  AccordionTrigger,
   AccordionContent,
   AccordionHeader,
+  AccordionItem,
+  AccordionRoot,
+  AccordionTrigger,
 } from 'reka-ui'
 
 interface AccordionItemData {
@@ -119,12 +119,20 @@ withDefaults(defineProps<Props>(), {
 }
 
 @keyframes accordion-open {
-  from { height: 0; }
-  to { height: var(--reka-accordion-content-height); }
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--reka-accordion-content-height);
+  }
 }
 
 @keyframes accordion-close {
-  from { height: var(--reka-accordion-content-height); }
-  to { height: 0; }
+  from {
+    height: var(--reka-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }
 </style>

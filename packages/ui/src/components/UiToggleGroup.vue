@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToggleGroupRoot, ToggleGroupItem } from 'reka-ui'
+import { ToggleGroupItem, ToggleGroupRoot } from 'reka-ui'
 
 interface ToggleOption {
   value: string

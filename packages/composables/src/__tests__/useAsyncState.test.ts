@@ -11,9 +11,7 @@ describe('useAsyncState', () => {
   })
 
   it('executes and returns data', async () => {
-    const { data, error, isLoading, execute } = useAsyncState(
-      async () => 'hello',
-    )
+    const { data, error, isLoading, execute } = useAsyncState(async () => 'hello')
 
     const result = await execute()
 
@@ -38,6 +36,7 @@ describe('useAsyncState', () => {
 
   it('handles non-Error throws', async () => {
     const { error, execute } = useAsyncState(async () => {
+      // eslint-disable-next-line no-throw-literal
       throw 'string error'
     })
 

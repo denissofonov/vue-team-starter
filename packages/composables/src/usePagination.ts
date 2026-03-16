@@ -1,5 +1,5 @@
-import { computed, ref } from 'vue'
 import type { Ref } from 'vue'
+import { computed, ref } from 'vue'
 
 interface UsePaginationOptions {
   total: Ref<number>
@@ -11,9 +11,7 @@ export function usePagination(options: UsePaginationOptions) {
   const page = ref(options.initialPage ?? 1)
   const pageSize = ref(options.pageSize ?? 10)
 
-  const totalPages = computed(() =>
-    Math.max(1, Math.ceil(options.total.value / pageSize.value)),
-  )
+  const totalPages = computed(() => Math.max(1, Math.ceil(options.total.value / pageSize.value)))
 
   const isFirst = computed(() => page.value <= 1)
   const isLast = computed(() => page.value >= totalPages.value)

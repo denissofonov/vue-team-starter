@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { CheckboxRoot, CheckboxIndicator } from 'reka-ui'
+import { CheckboxIndicator, CheckboxRoot } from 'reka-ui'
 
 interface Props {
   modelValue?: boolean
@@ -28,7 +28,13 @@ defineEmits<{
     >
       <CheckboxIndicator class="ui-checkbox__indicator">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-          <path d="M11.5 3.5L5.5 9.5L2.5 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          <path
+            d="M11.5 3.5L5.5 9.5L2.5 6.5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
         </svg>
       </CheckboxIndicator>
     </CheckboxRoot>

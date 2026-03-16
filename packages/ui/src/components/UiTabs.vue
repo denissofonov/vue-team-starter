@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { TabsRoot, TabsList, TabsTrigger, TabsContent, TabsIndicator } from 'reka-ui'
+import { TabsContent, TabsIndicator, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 
 interface Tab {
   value: string
@@ -40,12 +40,7 @@ defineEmits<{
     </TabsList>
 
     <div class="ui-tabs__content-wrapper">
-      <TabsContent
-        v-for="tab in tabs"
-        :key="tab.value"
-        :value="tab.value"
-        class="ui-tabs__content"
-      >
+      <TabsContent v-for="tab in tabs" :key="tab.value" :value="tab.value" class="ui-tabs__content">
         <slot :name="tab.value" />
       </TabsContent>
     </div>

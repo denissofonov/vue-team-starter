@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {
+  PopoverArrow,
+  PopoverClose,
+  PopoverContent,
+  PopoverPortal,
   PopoverRoot,
   PopoverTrigger,
-  PopoverPortal,
-  PopoverContent,
-  PopoverClose,
-  PopoverArrow,
 } from 'reka-ui'
 
 interface Props {
@@ -25,9 +25,7 @@ withDefaults(defineProps<Props>(), {
     <PopoverPortal>
       <PopoverContent class="ui-popover" :side="side" :side-offset="6">
         <slot />
-        <PopoverClose class="ui-popover__close" aria-label="Close">
-          &times;
-        </PopoverClose>
+        <PopoverClose class="ui-popover__close" aria-label="Close"> &times; </PopoverClose>
         <PopoverArrow class="ui-popover__arrow" :width="12" :height="6" />
       </PopoverContent>
     </PopoverPortal>
@@ -75,7 +73,13 @@ withDefaults(defineProps<Props>(), {
 }
 
 @keyframes popover-show {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>

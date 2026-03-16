@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { UiButton } from '@vue-team-starter/ui'
 import { useTheme } from '@vue-team-starter/composables'
-import { Sun, Moon, Home, Puzzle, Github } from 'lucide-vue-next'
+import { UiButton } from '@vue-team-starter/ui'
+import { Github, Home, Moon, Puzzle, Sun } from 'lucide-vue-next'
 
 const { isDark, toggle } = useTheme()
 
@@ -16,12 +16,7 @@ const navItems = [
     <nav class="layout__nav">
       <span class="layout__logo">vue-team-starter</span>
       <div class="layout__links">
-        <NuxtLink
-          v-for="item in navItems"
-          :key="item.to"
-          :to="item.to"
-          class="layout__link"
-        >
+        <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to" class="layout__link">
           <component :is="item.icon" :size="16" />
           {{ item.label }}
         </NuxtLink>

@@ -25,7 +25,8 @@ defineEmits<{
 <template>
   <Primitive
     :as="as"
-    :class="['ui-button', `ui-button--${variant}`, `ui-button--${size}`]"
+    class="ui-button"
+    :class="[`ui-button--${variant}`, `ui-button--${size}`]"
     :disabled="disabled || loading"
     @click="$emit('click', $event)"
   >

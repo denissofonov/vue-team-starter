@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {
-  DropdownMenuRoot,
-  DropdownMenuTrigger,
-  DropdownMenuPortal,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuRoot,
   DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from 'reka-ui'
 
 interface MenuItem {
@@ -105,7 +105,13 @@ defineEmits<{
 }
 
 @keyframes dropdown-show {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { SliderRoot, SliderTrack, SliderRange, SliderThumb } from 'reka-ui'
+import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from 'reka-ui'
 
 interface Props {
   modelValue?: number[]

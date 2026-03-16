@@ -1,4 +1,4 @@
-import { reactive, computed } from 'vue'
+import { computed, reactive } from 'vue'
 
 type ValidationRule<T = string> = (value: T) => string | true
 type FormFields = Record<string, unknown>
@@ -73,7 +73,7 @@ export function useForm<T extends FormFields>(config: {
   const values = computed(() => {
     const result = {} as T
     for (const key of Object.keys(fields)) {
-      (result as any)[key] = fields[key].value
+      ;(result as any)[key] = fields[key].value
     }
     return result
   })
@@ -82,17 +82,22 @@ export function useForm<T extends FormFields>(config: {
 }
 
 // Common validation rules
-export const required = (msg = 'Required'): ValidationRule<string> =>
-  (v) => (v && v.trim().length > 0) || msg
+export function required(msg = 'Required'): ValidationRule<string> {
+  return (v) => (v && v.trim().length > 0) || msg
+}
 
-export const minLength = (min: number, msg?: string): ValidationRule<string> =>
-  (v) => (v && v.length >= min) || msg || `Minimum ${min} characters`
+export function minLength(min: number, msg?: string): ValidationRule<string> {
+  return (v) => (v && v.length >= min) || msg || `Minimum ${min} characters`
+}
 
-export const maxLength = (max: number, msg?: string): ValidationRule<string> =>
-  (v) => (!v || v.length <= max) || msg || `Maximum ${max} characters`
+export function maxLength(max: number, msg?: string): ValidationRule<string> {
+  return (v) => !v || v.length <= max || msg || `Maximum ${max} characters`
+}
 
-export const pattern = (regex: RegExp, msg = 'Invalid format'): ValidationRule<string> =>
-  (v) => regex.test(v) || msg
+export function pattern(regex: RegExp, msg = 'Invalid format'): ValidationRule<string> {
+  return (v) => regex.test(v) || msg
+}
 
-export const email = (msg = 'Invalid email'): ValidationRule<string> =>
-  pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg)
+export function email(msg = 'Invalid email'): ValidationRule<string> {
+  return pattern(/^[^\s@]+@[^\s@][^\s.@]*\.[^\s@]+$/, msg)
+}

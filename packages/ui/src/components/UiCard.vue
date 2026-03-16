@@ -9,7 +9,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div :class="['ui-card', `ui-card--padding-${padding}`]">
+  <div class="ui-card" :class="[`ui-card--padding-${padding}`]">
     <div v-if="$slots.header" class="ui-card__header">
       <slot name="header" />
     </div>

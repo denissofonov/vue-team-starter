@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ProgressRoot, ProgressIndicator } from 'reka-ui'
+import { ProgressIndicator, ProgressRoot } from 'reka-ui'
 
 interface Props {
   value: number

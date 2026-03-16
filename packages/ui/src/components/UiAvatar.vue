@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { AvatarRoot, AvatarImage, AvatarFallback } from 'reka-ui'
+import { AvatarFallback, AvatarImage, AvatarRoot } from 'reka-ui'
 
 interface Props {
   src?: string
@@ -17,7 +17,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <AvatarRoot :class="['ui-avatar', `ui-avatar--${size}`]">
+  <AvatarRoot class="ui-avatar" :class="[`ui-avatar--${size}`]">
     <AvatarImage v-if="src" :src="src" :alt="alt" class="ui-avatar__image" />
     <AvatarFallback class="ui-avatar__fallback" :delay-ms="300">
       {{ fallback }}

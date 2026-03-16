@@ -11,7 +11,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <span :class="['ui-badge', `ui-badge--${variant}`, `ui-badge--${size}`]">
+  <span class="ui-badge" :class="[`ui-badge--${variant}`, `ui-badge--${size}`]">
     <slot />
   </span>
 </template>

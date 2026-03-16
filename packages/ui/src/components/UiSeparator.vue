@@ -16,7 +16,8 @@ withDefaults(defineProps<Props>(), {
   <Separator
     :orientation="orientation"
     :decorative="decorative"
-    :class="['ui-separator', `ui-separator--${orientation}`]"
+    class="ui-separator"
+    :class="[`ui-separator--${orientation}`]"
   />
 </template>
 

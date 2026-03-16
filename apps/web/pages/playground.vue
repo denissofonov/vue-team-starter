@@ -1,28 +1,28 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import {
-  UiButton,
-  UiInput,
-  UiCard,
-  UiModal,
-  UiBadge,
-  UiSelect,
-  UiTabs,
-  UiTooltip,
-  UiDropdownMenu,
-  UiSwitch,
-  UiCheckbox,
-  UiRadioGroup,
   UiAccordion,
-  UiProgress,
   UiAvatar,
+  UiBadge,
+  UiButton,
+  UiCard,
+  UiCheckbox,
+  UiDropdownMenu,
+  UiInput,
+  UiModal,
+  UiPopover,
+  UiProgress,
+  UiRadioGroup,
+  UiSelect,
   UiSeparator,
   UiSlider,
-  UiPopover,
+  UiSwitch,
+  UiTabs,
   UiToggleGroup,
+  UiTooltip,
 } from '@vue-team-starter/ui'
-import { TooltipProvider } from 'reka-ui'
 import { ChevronDown } from 'lucide-vue-next'
+import { TooltipProvider } from 'reka-ui'
+import { ref } from 'vue'
 
 // Input
 const inputValue = ref('')
@@ -38,7 +38,9 @@ const modalOpen = ref(false)
 const loading = ref(false)
 function simulateLoading() {
   loading.value = true
-  setTimeout(() => { loading.value = false }, 2000)
+  setTimeout(() => {
+    loading.value = false
+  }, 2000)
 }
 
 // Select
@@ -87,9 +89,24 @@ const notifications = ref(true)
 
 // Accordion
 const accordionItems = [
-  { value: 'q1', title: 'How do I add a new package to the monorepo?', content: 'Create a folder in packages/, add a package.json with the workspace name, and run pnpm install. Turborepo will pick it up automatically.' },
-  { value: 'q2', title: 'Can I swap the design tokens for Tailwind?', content: 'Yes, but you\'d need to restyle every component. The tokens are intentionally decoupled — check docs/adr/006 for the reasoning.' },
-  { value: 'q3', title: 'Why are some component styles not scoped?', content: 'Components that use Reka UI portals (Modal, Select, Dropdown, Tooltip, Popover) render content in document body via Teleport, so scoped styles don\'t reach them.' },
+  {
+    value: 'q1',
+    title: 'How do I add a new package to the monorepo?',
+    content:
+      'Create a folder in packages/, add a package.json with the workspace name, and run pnpm install. Turborepo will pick it up automatically.',
+  },
+  {
+    value: 'q2',
+    title: 'Can I swap the design tokens for Tailwind?',
+    content:
+      "Yes, but you'd need to restyle every component. The tokens are intentionally decoupled — check docs/adr/006 for the reasoning.",
+  },
+  {
+    value: 'q3',
+    title: 'Why are some component styles not scoped?',
+    content:
+      "Components that use Reka UI portals (Modal, Select, Dropdown, Tooltip, Popover) render content in document body via Teleport, so scoped styles don't reach them.",
+  },
 ]
 
 // Progress
@@ -114,7 +131,7 @@ const toggleOptions = [
       <header class="playground__header">
         <div class="playground__title-row">
           <h1>Playground</h1>
-          <UiBadge variant="info">19 components</UiBadge>
+          <UiBadge variant="info"> 19 components </UiBadge>
         </div>
         <p class="playground__subtitle">
           All components built on Reka UI primitives, styled with design tokens
@@ -127,18 +144,18 @@ const toggleOptions = [
         <div class="playground__group">
           <h3>Variants</h3>
           <div class="playground__row">
-            <UiButton variant="primary">Primary</UiButton>
-            <UiButton variant="secondary">Secondary</UiButton>
-            <UiButton variant="ghost">Ghost</UiButton>
-            <UiButton variant="danger">Danger</UiButton>
+            <UiButton variant="primary"> Primary </UiButton>
+            <UiButton variant="secondary"> Secondary </UiButton>
+            <UiButton variant="ghost"> Ghost </UiButton>
+            <UiButton variant="danger"> Danger </UiButton>
           </div>
         </div>
         <div class="playground__group">
           <h3>Sizes</h3>
           <div class="playground__row playground__row--center">
-            <UiButton size="sm">Small</UiButton>
-            <UiButton size="md">Medium</UiButton>
-            <UiButton size="lg">Large</UiButton>
+            <UiButton size="sm"> Small </UiButton>
+            <UiButton size="md"> Medium </UiButton>
+            <UiButton size="lg"> Large </UiButton>
           </div>
         </div>
         <div class="playground__group">
@@ -147,7 +164,7 @@ const toggleOptions = [
             <UiButton :loading="loading" @click="simulateLoading">
               {{ loading ? 'Loading...' : 'Click to load' }}
             </UiButton>
-            <UiButton :disabled="true">Disabled</UiButton>
+            <UiButton :disabled="true"> Disabled </UiButton>
           </div>
         </div>
       </section>
@@ -156,10 +173,20 @@ const toggleOptions = [
       <section class="playground__section">
         <h2>UiInput</h2>
         <div class="playground__grid">
-          <UiInput v-model="inputValue" label="With validation" placeholder="Type at least 3 chars..." :error="inputError" @update:model-value="validateInput" />
+          <UiInput
+            v-model="inputValue"
+            label="With validation"
+            placeholder="Type at least 3 chars..."
+            :error="inputError"
+            @update:model-value="validateInput"
+          />
           <UiInput label="Password" type="password" placeholder="Enter password" />
           <UiInput label="Disabled" model-value="Can't edit this" :disabled="true" />
-          <UiInput label="With error" error="This field is required" placeholder="Something wrong" />
+          <UiInput
+            label="With error"
+            error="This field is required"
+            placeholder="Something wrong"
+          />
         </div>
       </section>
 
@@ -168,7 +195,7 @@ const toggleOptions = [
         <h2>UiSelect</h2>
         <div class="playground__row playground__row--center">
           <UiSelect v-model="selectedFruit" :options="fruitOptions" placeholder="Pick a fruit..." />
-          <UiBadge v-if="selectedFruit" variant="success">Selected: {{ selectedFruit }}</UiBadge>
+          <UiBadge v-if="selectedFruit" variant="success"> Selected: {{ selectedFruit }} </UiBadge>
         </div>
       </section>
 
@@ -227,7 +254,9 @@ const toggleOptions = [
         <h2>UiToggleGroup</h2>
         <div class="playground__row playground__row--center">
           <UiToggleGroup v-model="toggleValue" :options="toggleOptions" />
-          <UiBadge v-if="toggleValue">{{ toggleValue }}</UiBadge>
+          <UiBadge v-if="toggleValue">
+            {{ toggleValue }}
+          </UiBadge>
         </div>
       </section>
 
@@ -237,7 +266,9 @@ const toggleOptions = [
         <UiCard>
           <UiTabs :tabs="tabs">
             <template #overview>
-              <p>Tabs use Reka UI primitives with full keyboard navigation (arrow keys, Home, End).</p>
+              <p>
+                Tabs use Reka UI primitives with full keyboard navigation (arrow keys, Home, End).
+              </p>
             </template>
             <template #features>
               <ul>
@@ -298,16 +329,16 @@ const toggleOptions = [
         <h2>UiTooltip</h2>
         <div class="playground__row">
           <UiTooltip content="Top tooltip" side="top">
-            <UiButton variant="secondary">Top</UiButton>
+            <UiButton variant="secondary"> Top </UiButton>
           </UiTooltip>
           <UiTooltip content="Right tooltip" side="right">
-            <UiButton variant="secondary">Right</UiButton>
+            <UiButton variant="secondary"> Right </UiButton>
           </UiTooltip>
           <UiTooltip content="Bottom tooltip" side="bottom">
-            <UiButton variant="secondary">Bottom</UiButton>
+            <UiButton variant="secondary"> Bottom </UiButton>
           </UiTooltip>
           <UiTooltip content="Left tooltip" side="left">
-            <UiButton variant="secondary">Left</UiButton>
+            <UiButton variant="secondary"> Left </UiButton>
           </UiTooltip>
         </div>
       </section>
@@ -317,10 +348,18 @@ const toggleOptions = [
         <h2>UiPopover</h2>
         <UiPopover>
           <template #trigger>
-            <UiButton variant="secondary">Open Popover</UiButton>
+            <UiButton variant="secondary"> Open Popover </UiButton>
           </template>
           <div style="display: flex; flex-direction: column; gap: var(--spacing-3)">
-            <p style="font-size: var(--font-size-sm); font-weight: var(--font-weight-semibold); margin: 0">Settings</p>
+            <p
+              style="
+                font-size: var(--font-size-sm);
+                font-weight: var(--font-weight-semibold);
+                margin: 0;
+              "
+            >
+              Settings
+            </p>
             <UiInput label="Name" placeholder="Your name" />
             <UiInput label="Email" placeholder="you@example.com" type="email" />
           </div>
@@ -332,9 +371,9 @@ const toggleOptions = [
         <h2>UiDropdownMenu</h2>
         <div class="playground__row playground__row--center">
           <UiDropdownMenu :items="menuItems" @select="menuAction = $event">
-            <UiButton variant="secondary">Open menu <ChevronDown :size="14" /></UiButton>
+            <UiButton variant="secondary"> Open menu <ChevronDown :size="14" /> </UiButton>
           </UiDropdownMenu>
-          <UiBadge v-if="menuAction">Action: {{ menuAction }}</UiBadge>
+          <UiBadge v-if="menuAction"> Action: {{ menuAction }} </UiBadge>
         </div>
       </section>
 
@@ -344,18 +383,18 @@ const toggleOptions = [
         <div class="playground__group">
           <h3>Variants</h3>
           <div class="playground__row">
-            <UiBadge variant="default">Default</UiBadge>
-            <UiBadge variant="success">Success</UiBadge>
-            <UiBadge variant="warning">Warning</UiBadge>
-            <UiBadge variant="error">Error</UiBadge>
-            <UiBadge variant="info">Info</UiBadge>
+            <UiBadge variant="default"> Default </UiBadge>
+            <UiBadge variant="success"> Success </UiBadge>
+            <UiBadge variant="warning"> Warning </UiBadge>
+            <UiBadge variant="error"> Error </UiBadge>
+            <UiBadge variant="info"> Info </UiBadge>
           </div>
         </div>
         <div class="playground__group">
           <h3>Sizes</h3>
           <div class="playground__row playground__row--center">
-            <UiBadge size="sm">Small</UiBadge>
-            <UiBadge size="md">Medium</UiBadge>
+            <UiBadge size="sm"> Small </UiBadge>
+            <UiBadge size="md"> Medium </UiBadge>
           </div>
         </div>
       </section>
@@ -365,16 +404,16 @@ const toggleOptions = [
         <h2>UiCard</h2>
         <div class="playground__grid playground__grid--cards">
           <UiCard>
-            <template #header>Simple Card</template>
+            <template #header> Simple Card </template>
             <p>Basic card with header and body content.</p>
           </UiCard>
           <UiCard>
-            <template #header>With Footer</template>
+            <template #header> With Footer </template>
             <p>Card with all three sections.</p>
             <template #footer>
               <div class="playground__card-footer">
-                <UiButton variant="ghost" size="sm">Cancel</UiButton>
-                <UiButton variant="primary" size="sm">Save</UiButton>
+                <UiButton variant="ghost" size="sm"> Cancel </UiButton>
+                <UiButton variant="primary" size="sm"> Save </UiButton>
               </div>
             </template>
           </UiCard>
@@ -382,7 +421,7 @@ const toggleOptions = [
             <template #header>
               <div class="playground__card-header">
                 Large Padding
-                <UiBadge variant="success" size="sm">New</UiBadge>
+                <UiBadge variant="success" size="sm"> New </UiBadge>
               </div>
             </template>
             <p>This card has larger padding.</p>
@@ -394,16 +433,20 @@ const toggleOptions = [
       <section class="playground__section">
         <h2>UiSeparator</h2>
         <div class="playground__column">
-          <p style="font-size: var(--font-size-sm); color: var(--color-neutral-500)">Content above</p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-neutral-500)">
+            Content above
+          </p>
           <UiSeparator />
-          <p style="font-size: var(--font-size-sm); color: var(--color-neutral-500)">Content below</p>
+          <p style="font-size: var(--font-size-sm); color: var(--color-neutral-500)">
+            Content below
+          </p>
         </div>
       </section>
 
       <!-- Modal -->
       <section class="playground__section">
         <h2>UiModal</h2>
-        <UiButton @click="modalOpen = true">Open Modal</UiButton>
+        <UiButton @click="modalOpen = true"> Open Modal </UiButton>
         <UiModal
           :open="modalOpen"
           title="Example Modal"
@@ -412,8 +455,8 @@ const toggleOptions = [
         >
           <UiInput label="Name" placeholder="Enter your name" />
           <template #footer>
-            <UiButton variant="ghost" @click="modalOpen = false">Cancel</UiButton>
-            <UiButton variant="primary" @click="modalOpen = false">Confirm</UiButton>
+            <UiButton variant="ghost" @click="modalOpen = false"> Cancel </UiButton>
+            <UiButton variant="primary" @click="modalOpen = false"> Confirm </UiButton>
           </template>
         </UiModal>
       </section>
@@ -425,7 +468,10 @@ const toggleOptions = [
           <h3>Primary Colors</h3>
           <div class="playground__colors">
             <div v-for="n in 9" :key="n" class="playground__color-swatch">
-              <div class="playground__color-box" :style="{ background: `var(--color-primary-${n}00)` }" />
+              <div
+                class="playground__color-box"
+                :style="{ background: `var(--color-primary-${n}00)` }"
+              />
               <span>{{ n }}00</span>
             </div>
           </div>

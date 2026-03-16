@@ -1,16 +1,14 @@
 <script setup lang="ts">
 import {
+  SelectContent,
+  SelectItem,
+  SelectItemIndicator,
+  SelectItemText,
+  SelectPortal,
   SelectRoot,
   SelectTrigger,
   SelectValue,
-  SelectPortal,
-  SelectContent,
   SelectViewport,
-  SelectItem,
-  SelectItemText,
-  SelectItemIndicator,
-  SelectGroup,
-  SelectLabel,
 } from 'reka-ui'
 
 interface SelectOption {
@@ -54,9 +52,7 @@ defineEmits<{
             :disabled="option.disabled"
             class="ui-select__item"
           >
-            <SelectItemIndicator class="ui-select__indicator">
-              &#10003;
-            </SelectItemIndicator>
+            <SelectItemIndicator class="ui-select__indicator"> &#10003; </SelectItemIndicator>
             <SelectItemText>{{ option.label }}</SelectItemText>
           </SelectItem>
         </SelectViewport>
@@ -144,7 +140,13 @@ defineEmits<{
 }
 
 @keyframes select-show {
-  from { opacity: 0; transform: translateY(-4px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

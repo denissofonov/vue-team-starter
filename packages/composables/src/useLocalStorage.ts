@@ -1,5 +1,5 @@
-import { ref, watch } from 'vue'
 import type { Ref } from 'vue'
+import { ref, watch } from 'vue'
 
 export function useLocalStorage<T>(key: string, defaultValue: T): Ref<T> {
   const stored = localStorage.getItem(key)

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { UiButton, UiCard } from '@vue-team-starter/ui'
 
-const props = defineProps<{
+defineProps<{
   error: {
     statusCode: number
     message: string
@@ -17,17 +17,15 @@ function handleClearError() {
   <div class="error-page">
     <UiCard>
       <template #header>
-        <span class="error-page__code">{{ error.statusCode }}</span>
+        <span class="error-page__code">{{ $props.error.statusCode }}</span>
       </template>
 
       <p class="error-page__message">
-        {{ error.statusCode === 404 ? 'Page not found' : 'Something went wrong' }}
+        {{ $props.error.statusCode === 404 ? 'Page not found' : 'Something went wrong' }}
       </p>
 
       <template #footer>
-        <UiButton variant="primary" @click="handleClearError">
-          Back to home
-        </UiButton>
+        <UiButton variant="primary" @click="handleClearError"> Back to home </UiButton>
       </template>
     </UiCard>
   </div>

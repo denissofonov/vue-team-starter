@@ -1,21 +1,16 @@
 <script setup lang="ts">
+import { UiBadge, UiButton, UiCard, UiSeparator } from '@vue-team-starter/ui'
 import {
-  UiButton,
-  UiCard,
-  UiBadge,
-  UiSeparator,
-} from '@vue-team-starter/ui'
-import {
-  Package,
-  Layers,
-  Shield,
-  Paintbrush,
-  TestTube,
-  GitBranch,
-  FileText,
-  Terminal,
   ArrowRight,
   ExternalLink,
+  FileText,
+  GitBranch,
+  Layers,
+  Package,
+  Paintbrush,
+  Shield,
+  Terminal,
+  TestTube,
 } from 'lucide-vue-next'
 
 const features = [
@@ -73,10 +68,11 @@ const packages = [
   <div class="home">
     <!-- Hero -->
     <section class="hero">
-      <UiBadge variant="info">Open Source Template</UiBadge>
+      <UiBadge variant="info"> Open Source Template </UiBadge>
       <h1 class="hero__title">vue-team-starter</h1>
       <p class="hero__desc">
-        Production-ready Nuxt 3 monorepo template with UI kit, design tokens, tests, CI/CD, and team processes built in.
+        Production-ready Nuxt 3 monorepo template with UI kit, design tokens, tests, CI/CD, and team
+        processes built in.
       </p>
       <div class="hero__actions">
         <NuxtLink to="/playground">
@@ -109,8 +105,12 @@ const packages = [
             <div class="feature__icon">
               <component :is="feature.icon" :size="22" />
             </div>
-            <h3 class="feature__title">{{ feature.title }}</h3>
-            <p class="feature__desc">{{ feature.desc }}</p>
+            <h3 class="feature__title">
+              {{ feature.title }}
+            </h3>
+            <p class="feature__desc">
+              {{ feature.desc }}
+            </p>
           </div>
         </UiCard>
       </div>
@@ -128,7 +128,9 @@ const packages = [
             <code class="package__name">{{ pkg.name }}</code>
             <span class="package__desc">{{ pkg.desc }}</span>
           </div>
-          <UiBadge variant="default" size="sm">{{ pkg.badge }}</UiBadge>
+          <UiBadge variant="default" size="sm">
+            {{ pkg.badge }}
+          </UiBadge>
         </div>
       </div>
     </section>

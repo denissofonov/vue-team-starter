@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  TooltipRoot,
-  TooltipTrigger,
-  TooltipPortal,
-  TooltipContent,
-  TooltipArrow,
-} from 'reka-ui'
+import { TooltipArrow, TooltipContent, TooltipPortal, TooltipRoot, TooltipTrigger } from 'reka-ui'
 
 interface Props {
   content: string
@@ -53,7 +47,13 @@ withDefaults(defineProps<Props>(), {
 }
 
 @keyframes tooltip-show {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>

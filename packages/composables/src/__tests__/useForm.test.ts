@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { useForm, required, minLength, email } from '../useForm'
+import { email, minLength, required, useForm } from '../useForm'
 
 describe('useForm', () => {
   it('initializes with default values', () => {
