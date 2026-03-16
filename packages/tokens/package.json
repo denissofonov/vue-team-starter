@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "main": "index.css",
-  "files": ["index.css", "variables.css"]
+  "files": [
+    "index.css",
+    "variables.css"
+  ]
 }

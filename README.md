@@ -9,6 +9,7 @@ Production-ready Nuxt 3 monorepo template with team processes built in.
 Most Vue starters give you a framework and leave the rest to figure out. In real teams, 80% of the friction isn't the framework — it's everything around it: inconsistent code style, missing tests, undocumented decisions, components with broken accessibility, and "it works on my machine" CI.
 
 This template solves that by shipping everything a team needs on day one:
+
 - A **monorepo** that scales from 1 to 10+ packages without config hell
 - A **UI kit** built on Reka UI headless primitives — accessible by default, styled with design tokens
 - **CI/CD** that catches problems before they hit main
@@ -58,29 +59,29 @@ Zero runtime. No build step. Works with any styling approach. Theming via `[data
 
 ### UI Kit (`packages/ui`) — 10 components
 
-| Component | Reka UI Primitive | Description |
-|-----------|------------------|-------------|
-| `UiButton` | `Primitive` | Polymorphic button with variants, sizes, loading state |
-| `UiInput` | `Label` | Text input with validation, error states, a11y labels |
-| `UiModal` | `Dialog` | Modal dialog with focus trap, Escape to close |
-| `UiSelect` | `Select` | Dropdown select with keyboard navigation |
-| `UiTabs` | `Tabs` | Tab panels with animated indicator |
-| `UiTooltip` | `Tooltip` | Configurable tooltip with positioning |
-| `UiDropdownMenu` | `DropdownMenu` | Context menu with separator and danger items |
-| `UiSwitch` | `Switch` | Toggle switch with label |
-| `UiCard` | — | Card with header/body/footer slots |
-| `UiBadge` | — | Status badge with color variants |
+| Component        | Reka UI Primitive | Description                                            |
+| ---------------- | ----------------- | ------------------------------------------------------ |
+| `UiButton`       | `Primitive`       | Polymorphic button with variants, sizes, loading state |
+| `UiInput`        | `Label`           | Text input with validation, error states, a11y labels  |
+| `UiModal`        | `Dialog`          | Modal dialog with focus trap, Escape to close          |
+| `UiSelect`       | `Select`          | Dropdown select with keyboard navigation               |
+| `UiTabs`         | `Tabs`            | Tab panels with animated indicator                     |
+| `UiTooltip`      | `Tooltip`         | Configurable tooltip with positioning                  |
+| `UiDropdownMenu` | `DropdownMenu`    | Context menu with separator and danger items           |
+| `UiSwitch`       | `Switch`          | Toggle switch with label                               |
+| `UiCard`         | —                 | Card with header/body/footer slots                     |
+| `UiBadge`        | —                 | Status badge with color variants                       |
 
 ### Composables (`packages/composables`) — 6 composables
 
-| Composable | Description |
-|------------|-------------|
-| `useForm` | Form state management with validation rules (`required`, `minLength`, `email`, etc.) |
-| `useAsyncState` | Async operations with `data`/`error`/`isLoading` reactive tuple |
-| `usePagination` | Page state, navigation, computed ranges |
-| `useBreakpoints` | Responsive breakpoint detection |
-| `useTheme` | Light/dark theme toggle |
-| `useLocalStorage` | Reactive localStorage binding |
+| Composable        | Description                                                                          |
+| ----------------- | ------------------------------------------------------------------------------------ |
+| `useForm`         | Form state management with validation rules (`required`, `minLength`, `email`, etc.) |
+| `useAsyncState`   | Async operations with `data`/`error`/`isLoading` reactive tuple                      |
+| `usePagination`   | Page state, navigation, computed ranges                                              |
+| `useBreakpoints`  | Responsive breakpoint detection                                                      |
+| `useTheme`        | Light/dark theme toggle                                                              |
+| `useLocalStorage` | Reactive localStorage binding                                                        |
 
 ### Design Tokens (`packages/tokens`)
 
@@ -112,34 +113,34 @@ Open http://localhost:3000 — navigate to `/playground` to see all components.
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `pnpm dev` | Start development server |
-| `pnpm build` | Build all packages and apps |
-| `pnpm lint` | Lint all packages |
-| `pnpm typecheck` | Run TypeScript type checking |
-| `pnpm test` | Run unit tests (30 tests) |
-| `pnpm test:e2e` | Run Playwright E2E tests |
-| `pnpm format` | Format with Prettier |
-| `pnpm commit` | Interactive conventional commit |
+| Command          | Description                     |
+| ---------------- | ------------------------------- |
+| `pnpm dev`       | Start development server        |
+| `pnpm build`     | Build all packages and apps     |
+| `pnpm lint`      | Lint all packages               |
+| `pnpm typecheck` | Run TypeScript type checking    |
+| `pnpm test`      | Run unit tests (30 tests)       |
+| `pnpm test:e2e`  | Run Playwright E2E tests        |
+| `pnpm format`    | Format with Prettier            |
+| `pnpm commit`    | Interactive conventional commit |
 
 ## Tech Stack
 
-| Layer | Tool | Why |
-|-------|------|-----|
-| Monorepo | Turborepo + pnpm | Fast caching, strict deps |
-| Framework | Nuxt 3 | SSR, file-based routing, auto-imports |
-| Language | TypeScript (strict) | Catch errors at compile time |
-| UI Primitives | Reka UI | Headless, accessible, Vue-native |
-| Styling | CSS Custom Properties | Zero runtime, themeable |
-| Icons | Lucide | Tree-shakeable, consistent |
-| Fonts | @nuxt/fonts (Inter, JetBrains Mono) | Automatic optimization |
-| Unit Tests | Vitest + Vue Test Utils | Fast, Vue-native |
-| E2E Tests | Playwright | Cross-browser |
-| Linting | ESLint (antfu config) | Opinionated, minimal config |
-| Formatting | Prettier | Consistent code style |
-| Commits | commitlint + czg | Conventional commits |
-| CI | GitHub Actions | Lint → typecheck → test → build |
+| Layer         | Tool                                | Why                                   |
+| ------------- | ----------------------------------- | ------------------------------------- |
+| Monorepo      | Turborepo + pnpm                    | Fast caching, strict deps             |
+| Framework     | Nuxt 3                              | SSR, file-based routing, auto-imports |
+| Language      | TypeScript (strict)                 | Catch errors at compile time          |
+| UI Primitives | Reka UI                             | Headless, accessible, Vue-native      |
+| Styling       | CSS Custom Properties               | Zero runtime, themeable               |
+| Icons         | Lucide                              | Tree-shakeable, consistent            |
+| Fonts         | @nuxt/fonts (Inter, JetBrains Mono) | Automatic optimization                |
+| Unit Tests    | Vitest + Vue Test Utils             | Fast, Vue-native                      |
+| E2E Tests     | Playwright                          | Cross-browser                         |
+| Linting       | ESLint (antfu config)               | Opinionated, minimal config           |
+| Formatting    | Prettier                            | Consistent code style                 |
+| Commits       | commitlint + czg                    | Conventional commits                  |
+| CI            | GitHub Actions                      | Lint → typecheck → test → build       |
 
 ## Documentation
 

@@ -45,17 +45,20 @@ For significant technical decisions, create an ADR in `docs/adr/`. Use `docs/adr
 ## Code Review Guidelines
 
 ### What blocks a PR
+
 - Missing tests for new composables or component behavior
 - Accessibility regression (removed ARIA attributes, broken keyboard nav)
 - Type errors or `any` usage without justification
 - Breaking change to public component API without ADR
 
 ### What is a nit (non-blocking)
+
 - Naming preferences (unless misleading)
 - Minor style differences covered by Prettier
 - Alternative implementation that works equally well
 
 ### Review etiquette
+
 - Explain "why", not just "change this"
 - Prefix comments: `nit:`, `question:`, `blocker:`
 - Approve with nits rather than requesting changes for non-blocking feedback
