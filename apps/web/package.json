@@ -9,7 +9,6 @@
     "preview": "nuxt preview",
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
-    "test": "vitest run",
     "test:e2e": "playwright test"
   },
   "dependencies": {
